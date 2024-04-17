@@ -28,6 +28,29 @@ body {
   margin-bottom: 0; 
 }
 
+.containertophomepage {
+  margin-left: 70px; 
+  margin-right: 70px; 
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.image-link {
+  position: relative;
+  display: inline-block;
+}
+
+.badge {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 30px;
+  width: 16rem;
+
+}
+ 
 
 /* Navbar CSS */
 
@@ -82,3 +105,50 @@ body {
   
   }
 
+/* Discussion CSS */
+
+  .jumbotrondiscussion {
+
+    background-image: url(media/discussionbackground.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    padding: 100px 20px;
+    margin-bottom: 0;
+  
+  }
+
+  .media {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    margin-left: 70px;
+    margin-right: 70px;
+
+  }
+
+  .mr-3{
+  width: 64px; 
+  height: 64px;
+
+  }
+
+  .jumbotronsignin {
+
+    background-image: url(media/tradingbackground.jpeg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+    text-shadow: 
+    -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+    padding: 100px 20px;
+    margin-bottom: 0;
+  
+  }
