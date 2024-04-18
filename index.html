@@ -27,7 +27,7 @@
     <!-- Nav Bar -->
 
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="landing.html">
+        <a class="navbar-brand" href="index.html">
         <img src="media/transparenttcglogo.png" alt="Pokemon TCG Logo" height ="40">
         Pokemon TCG
       </a>
@@ -38,7 +38,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="landing.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="howtoplay.html">How to play</a>
@@ -50,7 +50,7 @@
         <a class="nav-link" href="discussion.html">Discussion Forum</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Expansions
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
@@ -79,54 +79,57 @@
     <div class="jumbotronhome mb-4">
         <h1 class="display-4">Welcome to my Pokemon TCG!</h1>
         <p class="lead">Gotta catch 'em all!</p>
-        <button type="button" class="btn btn-outline-light">Sign In</button>
-        <button type="button" class="btn btn-outline-light">Search cards</button>
+        <a href="sign.html">
+          <button type="button" class="btn btn-outline-dark">Sign In</button>
+        </a>
+        <button type="button" class="btn btn-outline-dark">Search Cards</button>
     </div>
 
     <!-- Grid -->
-
     <div class="containertophomepage">
-      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+
+      <!-- How do I play? -->
       <div class="row">
         <div class="col-md-8">
           <a href="howtoplay.html" class="image-link">
             <img src="media/whatistcg.png" class="img-fluid" alt="What is TCG?">
-            <div class="badge badge-primary text-wrap">
-              How do I play?
+            <div class="badge badge-primary-howdoiplay">
+              How to play
             </div>
           </a>
         </div>
 
       <!-- Carousel of cards -->
-
-      <div class="col-6 col-md-4">
+      <div class="col-12 col-md-4">
         
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-          </ol>
-
+          
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <a href="pikachu.html">
               <img src="media/pikachu.png" class="img-fluid" alt="Pikachu">
             </a>
+            <div class="badge badge-primary-carousel">
+              Our most popular cards
+            </div>
 
             </div>
 
             <div class="carousel-item">
-              <a href="blastoise.html">
                 <img src="media/blastoise.png" class="img-fluid" alt="Blastoise">
               </a>
+              <div class="badge badge-primary-carousel">
+                Our most popular cards
+              </div>
 
             </div>
 
             <div class="carousel-item">
-              <a href="charizard.html">
                 <img src="media/charizard.png" class="img-fluid" alt="Charizard">
               </a>
+
+              <div class="badge badge-primary-carousel">
+                Our most popular cards
+              </div>
 
               </div>
             </div>

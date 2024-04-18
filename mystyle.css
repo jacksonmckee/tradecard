@@ -4,20 +4,31 @@ body {
     background-color: #f8f9fa;
 }
 
-/* Landing CSS */
+/* Index CSS */
 
 .jumbotronhome {
     background-image: url(media/homepagebackground.jpg);
     background-size: cover;
-    color: white;
+    color: rgb(52, 58, 64);
+    font-weight: 900;
     text-align: center;
     text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
     padding: 100px 20px;
     margin-bottom: 0;
+}
+
+.btn-outline-dark {
+  font-weight:700;
+  border-width: 1px; 
+  text-shadow: 
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
 }
 
 .card-body {
@@ -40,16 +51,41 @@ body {
   display: inline-block;
 }
 
-.badge {
+.badge-primary-carousel {
+  background-color: rgb(52, 58, 64);
+  color: #f8f9fa;
   position: absolute;
-  top: 90%;
+  top: 97%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-size: 30px;
-  width: 16rem;
-
+  font-size: 2vw;
+  width: 55rem;
+  border-radius: 0cap;
+  
 }
+
+.badge-primary-howdoiplay {
+  background-color: rgb(52, 58, 64);
+  color: #f8f9fa;
+  position: absolute;
+  top: 97%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2vw;
+  width: 100%;
+  max-width: 55.1rem;
+  border-radius: 0cap;
+}
+
+
+
+.carousel-control-prev-icon, .carousel-control-next-icon{
+
+  border-color:  rgb(52, 58, 64);
+}
+
  
 
 /* Navbar CSS */
@@ -75,16 +111,18 @@ body {
 
     background-image: url(media/tradingbackground.jpeg);
     background-size: cover;
-    color: white;
+    color: rgb(52, 58, 64);
+    font-weight: 900;
     text-align: center;
     text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
     padding: 100px 20px;
     margin-bottom: 0;
-  
+
+   
   }
 
   /* Where to buy CSS */
@@ -93,13 +131,14 @@ body {
 
     background-image: url(media/wheretobuycards.jpg);
     background-size: cover;
-    color: white;
+    color: rgb(52, 58, 64);
+    font-weight: 900;
     text-align: center;
     text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
     padding: 100px 20px;
     margin-bottom: 0;
   
@@ -111,13 +150,14 @@ body {
 
     background-image: url(media/discussionbackground.png);
     background-size: cover;
-    color: white;
+    color: rgb(52, 58, 64);
+    font-weight: 900;
     text-align: center;
     text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
     padding: 100px 20px;
     margin-bottom: 0;
   
@@ -137,18 +177,30 @@ body {
 
   }
 
+  /* Sign in Css */
+
   .jumbotronsignin {
 
-    background-image: url(media/tradingbackground.jpeg);
+    background-image: url(media/signinbackground.png);
     background-size: cover;
-    color: white;
+    color: rgb(52, 58, 64);
+    font-weight: 900;
     text-align: center;
     text-shadow: 
-    -1px -1px 0 #000,  
-    1px -1px 0 #000,
-    -1px 1px 0 #000,
-    1px 1px 0 #000;
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
     padding: 100px 20px;
     margin-bottom: 0;
   
   }
+
+ .signin {
+
+  margin-bottom: 70px;
+  margin-top: 70px;
+  margin-left: 140px;
+
+
+ }

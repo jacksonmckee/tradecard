@@ -1,16 +1,10 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokemon TCG - How to play</title>
+    <title>Pokemon TCG - Sign In/Up</title>
 
     <!-- Fonts -->
 
@@ -44,8 +38,8 @@
       <li class="nav-item">
         <a class="nav-link" href="index.html">Home</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="howtoplay.html">How to play<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="howtoplay.html">How to play</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="wheretobuy.html">Where to buy cards</a>
@@ -80,14 +74,76 @@
       </nav>
 
     <!-- Jumbotron -->
-    <div class="jumbotronhowto">
-        <h1 class="display-4">A guide on how to play Pokemon TCG!</h1>
+    <div class="jumbotronsignin">
+        <h1 class="display-4">Sign in to your account!</h1>
         <p class="lead">Gotta catch 'em all!</p>
     </div>
 
-    <!-- How to play -->
+    <!-- Sign in for existing users -->
 
+    <div class="container signin">
+        <div class="row">
+
+            <div class="col-md-6"> 
+                <h2>Already have an account? Sign In</h2>
+                <form>
+                  <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9">
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-9 offset-sm-3"> 
+                      <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
     
+            <!-- Sign up for new users -->
+            <div class="col-md-6"> 
+                <h2>Create an Account</h2>
+                <form>
+                  <div class="form-group row">
+                    <label for="inputName" class="col-sm-3 col-form-label">Name</label>
+                    <div class="col-sm-9"> 
+                      <input type="text" class="form-control" id="inputName" placeholder="Name">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9"> 
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
+                    <div class="col-sm-9"> 
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputRePassword" class="col-sm-3 col-form-label">Re-enter Password</label>
+                    <div class="col-sm-9"> 
+                      <input type="password" class="form-control" id="inputRePassword" placeholder="Re-enter Password">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-9 offset-sm-3">
+                      <button type="submit" class="btn btn-primary">Sign Up</button>
+                    </div>
+                  </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
 
