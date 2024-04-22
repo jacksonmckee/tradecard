@@ -1,30 +1,30 @@
 /* Main CSS */
 
 body {
-    background-color: #f8f9fa;
+  background-color: lightblue;
 }
 
 /* Index CSS */
 
 .jumbotronhome {
-    background-image: url(media/homepagebackground.jpg);
-    background-size: cover;
-    color: rgb(52, 58, 64);
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 
+  background-image: url(media/homepagebackground.jpg);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;
-    padding: 100px 20px;
-    margin-bottom: 0;
+  padding: 100px 20px;
+  margin-bottom: 0;
 }
 
 .btn-outline-dark {
-  font-weight:700;
-  border-width: 1px; 
-  text-shadow: 
+  font-weight: 700;
+  border-width: 1px;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
@@ -36,12 +36,12 @@ body {
 }
 
 .card-title {
-  margin-bottom: 0; 
+  margin-bottom: 0;
 }
 
 .containertophomepage {
-  margin-left: 70px; 
-  margin-right: 70px; 
+  margin-left: 70px;
+  margin-right: 70px;
   margin-top: 70px;
   margin-bottom: 70px;
 }
@@ -51,23 +51,10 @@ body {
   display: inline-block;
 }
 
+.badge-primary-howdoiplay,
 .badge-primary-carousel {
   background-color: rgb(52, 58, 64);
-  color: #f8f9fa;
-  position: absolute;
-  top: 97%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-size: 2vw;
-  width: 55rem;
-  border-radius: 0cap;
-  
-}
-
-.badge-primary-howdoiplay {
-  background-color: rgb(52, 58, 64);
-  color: #f8f9fa;
+  color: white;
   position: absolute;
   top: 97%;
   left: 50%;
@@ -75,132 +62,130 @@ body {
   text-align: center;
   font-size: 2vw;
   width: 100%;
-  max-width: 55.1rem;
-  border-radius: 0cap;
+  max-width: 55rem;
 }
 
-
-
-.carousel-control-prev-icon, .carousel-control-next-icon{
-
-  border-color:  rgb(52, 58, 64);
-}
-
- 
 
 /* Navbar CSS */
 
-  .dropdown-menu .dropdown-item {
-    color: white;
-  }
+#navbar-image {
+  height: 40px;
 
-  .dropdown-menu .dropdown-item:hover {
-    background-color: black;
-    
-  }
+}
 
-  /* Footer CSS */
+.dropdown-menu .dropdown-item {
+  color: white;
+}
 
-  .invert-colors {
-    filter: invert(100%);
-  }
+.dropdown-menu .dropdown-item:hover {
+  background-color: black;
 
-  /* How to play CSS */
+}
 
-  .jumbotronhowto {
+/* Footer CSS */
 
-    background-image: url(media/tradingbackground.jpeg);
-    background-size: cover;
-    color: rgb(52, 58, 64);
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 
+#facebook-logo,
+#x-logo,
+#insta-logo {
+  height: 40px;
+  filter: invert(100%);
+}
+
+/* How to play CSS */
+
+.jumbotronhowto {
+
+  background-image: url(media/tradingbackground.jpeg);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;
-    padding: 100px 20px;
-    margin-bottom: 0;
+  padding: 100px 20px;
+  margin-bottom: 0;
 
-   
-  }
 
-  /* Where to buy CSS */
+}
 
-  .jumbotronwhereto {
+/* Where to buy CSS */
 
-    background-image: url(media/wheretobuycards.jpg);
-    background-size: cover;
-    color: rgb(52, 58, 64);
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 
+.jumbotronwhereto {
+
+  background-image: url(media/wheretobuycards.jpg);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;
-    padding: 100px 20px;
-    margin-bottom: 0;
-  
-  }
+  padding: 100px 20px;
+  margin-bottom: 0;
+
+}
 
 /* Discussion CSS */
 
-  .jumbotrondiscussion {
+.jumbotrondiscussion {
 
-    background-image: url(media/discussionbackground.png);
-    background-size: cover;
-    color: rgb(52, 58, 64);
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 
+  background-image: url(media/discussionbackground.png);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;
-    padding: 100px 20px;
-    margin-bottom: 0;
-  
-  }
+  padding: 100px 20px;
+  margin-bottom: 0;
 
-  .media {
-    margin-top: 70px;
-    margin-bottom: 70px;
-    margin-left: 70px;
-    margin-right: 70px;
+}
 
-  }
+.media {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  margin-left: 70px;
+  margin-right: 70px;
 
-  .mr-3{
-  width: 64px; 
+}
+
+.mr-3 {
+  width: 64px;
   height: 64px;
 
-  }
+}
 
-  /* Sign in Css */
+/* Sign in Css */
 
-  .jumbotronsignin {
+.jumbotronsignin {
 
-    background-image: url(media/signinbackground.png);
-    background-size: cover;
-    color: rgb(52, 58, 64);
-    font-weight: 900;
-    text-align: center;
-    text-shadow: 
+  background-image: url(media/signinbackground.png);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
     -1px -1px 0 white,
     1px -1px 0 white,
     -1px 1px 0 white,
     1px 1px 0 white;
-    padding: 100px 20px;
-    margin-bottom: 0;
-  
-  }
+  padding: 100px 20px;
+  margin-bottom: 0;
 
- .signin {
+}
+
+.signin {
 
   margin-bottom: 70px;
   margin-top: 70px;
   margin-left: 140px;
 
-
- }
+}
