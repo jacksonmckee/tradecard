@@ -24,11 +24,6 @@ body {
 .btn-outline-dark {
   font-weight: 700;
   border-width: 1px;
-  text-shadow:
-    -1px -1px 0 white,
-    1px -1px 0 white,
-    -1px 1px 0 white,
-    1px 1px 0 white;
 }
 
 .card-body {
@@ -187,5 +182,37 @@ body {
   margin-bottom: 70px;
   margin-top: 70px;
   margin-left: 140px;
+
+}
+
+/* Cards CSS */
+
+.jumbotroncards {
+  background-image: url(media/cards.jpg);
+  background-size: cover;
+  color: rgb(52, 58, 64);
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
+    -1px -1px 0 white,
+    1px -1px 0 white,
+    -1px 1px 0 white,
+    1px 1px 0 white;
+  padding: 100px 20px;
+  margin-bottom: 0;
+
+}
+
+.cards-container {
+  margin-top: 55px;
+  margin-bottom: 70px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.sort-by-form{
+  margin-top: 25px;
+  margin-bottom: 70px;
+  margin-right: 70px;
 
 }
