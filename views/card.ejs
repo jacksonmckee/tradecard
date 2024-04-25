@@ -70,7 +70,7 @@
         <p class="lead">Gotta catch 'em all!</p>
     </div>
 
-    <!-- Container -->
+    <!-- Container with filtering options -->
     <div class="container cards-container">
 
         <div class="navbar navbar-light">
@@ -119,27 +119,36 @@
         </div>
     </div>
 
+    <!-- Container holding cards -->
+
     <div class="container mt-5">
         <h2>
             <%= titletext %>
         </h2>
 
-        <h3>Buy a card...</h3>
+        <h3>Add a card to your wishlist!</h3>
 
         <div class="row">
-            <% cardData.forEach((card)=> { %>
+            <% cardData.forEach((card) => { %>
                 <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                     <div class="card h-100">
+                            <img src="<%= card.url_img %>" class="card-img-top" alt="Card Image">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <%= card.title %>
                             </h5>
-                            <a href="/buy?item=<%= card.id %>" class="btn btn-primary">Buy</a>
+                            <a href="/add?card=<%= card.id %>" class="btn btn-primary">Add</a>
                         </div>
                     </div>
                 </div>
-                <% }); %>
+            <% }); %>
         </div>
+        
+    </div>
+
+
+    </div>
+
     </div>
 
     <!-- Footer -->
