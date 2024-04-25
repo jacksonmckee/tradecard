@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon TCG - Cards</title>
+
+    <!-- Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="mystyle.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+
+    <nav class="navbar navbar-dark bg-dark" id="navbar">
+        <a class="navbar-brand" href="index.html">
+            <img id="navbar-image" src="media\transparenttcglogo.png" alt="Pokemon TCG Logo">
+            Pokemon TCG
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="howtoplay.html">How to play</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="discussion.html">Discussion Forum</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="cards.html">Cards</a><span class="sr-only">(current)</span>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Expansions
+                    </a>
+                    <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="baseset.html">Base Set</a>
+                        <a class="dropdown-item" href="jungle.html">Jungle</a>
+                        <a class="dropdown-item" href="fossil.html">Fossil</a>
+                        <a class="dropdown-item" href="baseset2.html">Base Set 2</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron -->
+    <div class="jumbotroncards">
+        <h1 class="display-4">Come look at all of our cards!</h1>
+        <p class="lead">Gotta catch 'em all!</p>
+    </div>
+
+    <!-- Container -->
+    <div class="container cards-container">
+
+        <div class="navbar navbar-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2 cards-search-bar" type="search" placeholder="Search our cards..."
+                    aria-label="Search">
+                <button type="button" class="btn btn-outline-dark">Search</button>
+            </form>
+        </div>
+
+        <div class="container filtering-container">
+
+            <form class="form-inline sort-by-form">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Sort by</label>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="1">Card name (A-Z)</option>
+                    <option value="2">Card name (Z-A)</option>
+                    <option value="3">Rarity (Rare Holo-Common)</option>
+                    <option value="4">Rarity (Common-Rare Holo)</option>
+                    <option value="5">Likes (Most-Least)</option>
+                    <option value="6">Likes (Least-Most)</option>
+                </select>
+
+                <form class="form-inline filter-by-form">
+                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Filter by</label>
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Expansions...</option>
+                        <option value="1">Base Set</option>
+                        <option value="2">Jungle</option>
+                        <option value="3">Fossil</option>
+                        <option value="4">Base Set 2</option>
+                    </select>
+
+                    <form class="form-inline collections-form">
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Members Collections</label>
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                            <option selected>Collections...</option>
+                            <option value="1">John's Collection</option>
+                            <option value="2">Jackson's Pokemon</option>
+                            <option value="3">Aidan's Team</option>
+                        </select>
+                    </form>
+                </form>
+            </form>
+        </div>
+
+        <!-- Container of 40 cards-->
+
+    </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+
+    <div class="card bg-dark text-white">
+        <div class="card-body">
+
+            <!-- Social Media Icons -->
+            <img id="facebook-logo" src="media/facebooklogo.png" alt="Facebook Logo">
+            <img id="x-logo" src="media/xlogo.png" alt="X Logo class=">
+            <img id="insta-logo" src="media/instalogo.png" alt="Instagram Logo">
+
+            <p class="card-text text-white">© Copyright 2024 Jackson Mckee</p>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,17 +1,24 @@
 const express = require("express");
-const mysql = require("mysql");
 const app = express();
+const PORT = process.env.PORT || 3000;
+const axios = require("axios");
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
 
-const port = process.env.PORT || 3000; 
+app.get('/', (req, res) => {
+    let ep = `http://localhost:4000/cards`;
 
-const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'jmckee50',
-  password: 'eZo0abUAEQY8YHlk',
-  database: '40289157'
+    axios.get(ep)
+        .then((response) => {
+            let cardData = response.data; 
+            res.render('card', { titletext: 'cards', cardData: cardData.data });  
+        })
+        .catch((error) => {
+            console.error('Error fetching card data:', error);
+            res.status(500).send('Error fetching card data');
+        });
 });
 
-app.listen(port, (err) => {
-    if (err) throw err;
-    console.log(`Server is listening on //localhost:${port}`);
+const server = app.listen(PORT, () => {
+    console.log(`API started on port ${server.address().port}`);
 });
