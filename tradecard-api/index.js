@@ -60,6 +60,19 @@ app.get('/cards', (req, res)=> {
 
 });
 
+// Individual
+
+app.get('/views/carddetails/:rowid', (req, res) => { 
+    let r_id = req.params.rowid;
+    let getcard = `SELECT *
+                       FROM card WHERE card_id=?`;
+    connection.query(getcard, [r_id], (err, data) => {  
+        if(err) throw err;
+        res.json({data});
+    });
+});
+
+
 // Card URLs //
 
 app.get('/cards/url', (req, res)=> { 
@@ -98,4 +111,3 @@ app.get('/cards/userCollection/:userCollectionId', (req, res)=> {
         res.json({data});
     });
 });
-
