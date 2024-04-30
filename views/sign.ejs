@@ -71,7 +71,6 @@
     <h1 class="display-4">Sign in to your account!</h1>
     <p class="lead">Gotta catch 'em all!</p>
   </div>
-
   <!-- Sign in for existing users -->
 
   <div class="container signin">
@@ -79,17 +78,17 @@
 
       <div class="col-md-6">
         <h2>Already have an account? Sign In</h2>
-        <form>
+        <form action="/signin" method="POST">
           <div class="form-group row">
             <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
             </div>
           </div>
           <div class="form-group row">
@@ -103,29 +102,30 @@
       <!-- Sign up for new users -->
       <div class="col-md-6">
         <h2>Create an Account</h2>
-        <form>
+        <form action="/create" method="POST">
           <div class="form-group row">
             <label for="inputName" class="col-sm-3 col-form-label">Name</label>
             <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputName" placeholder="Name">
+              <input type="text" class="form-control" id="inputName" placeholder="Name" name="user_name">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputPassword" class="col-sm-3 col-form-label">Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
             </div>
           </div>
           <div class="form-group row">
             <label for="inputRePassword" class="col-sm-3 col-form-label">Re-enter Password</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputRePassword" placeholder="Re-enter Password">
+              <input type="password" class="form-control" id="inputRePassword" placeholder="Re-enter Password"
+                name="re_password">
             </div>
           </div>
           <div class="form-group row">
