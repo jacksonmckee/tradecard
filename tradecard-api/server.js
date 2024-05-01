@@ -76,6 +76,19 @@ app.get('/cards/expansion/:expansionId', (req, res)=> {
     });
 });
 
+// Base Set expansion //
+
+app.get('/cards/expansion/1', (req, res)=> { 
+    let expansionId = req.params.expansionId;
+    let cardsExpansions = `SELECT *
+                      FROM card
+                      WHERE expansion_id = 1`;
+    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+        if(err) throw err;
+        res.json({data});
+    });
+});
+
 // User collections //
 
 app.get('/cards/userCollection/:userCollectionId', (req, res)=> { 
