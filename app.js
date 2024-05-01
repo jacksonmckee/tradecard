@@ -253,6 +253,22 @@ app.get('/cards/expansion/3', (req, res) => {
     });
 });
 
+// Base set 2 route
+app.get('/cards/expansion/4', (req, res) => { 
+    let expansionId = req.params.expansionId;
+    let cardsExpansions = `SELECT *
+                      FROM card
+                      WHERE expansion_id = 4`;
+    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('baseset2', { titletext: 'Base Set 2 Cards', cardData: data, rarityMap: rarityMap });
+    });
+});
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
