@@ -76,13 +76,13 @@
                 </p>
                 <p class="card-text">Illustrator: <%= card.illustrator %>
                 </p>
-                <p class="card-text">Rarity ID: <%= card.rarity_id %>
+                <p class="card-text">Rarity: <%= rarityMap[card.rarity_id] %>
                 </p>
-                <p class="card-text">Expansion ID: <%= card.expansion_id %>
+                <p class="card-text">Expansion: <%= expansionsMap[card.expansion_id] %>
                 </p>
                 <p class="card-text">HP: <%= card.hp %>
                 </p>
-                <p class="card-text">Card Type ID: <%= card.card_type_id %>
+                <p class="card-text">Card Type: <%= typeMap[card.card_type_id] %>
                 </p>
                 <p class="card-text">Description: <%= card.description %>
                 </p>

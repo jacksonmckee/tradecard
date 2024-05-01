@@ -92,6 +92,20 @@ const expansionsMap = {
     4: "Base Set 2"
 };
 
+// Card type mapping
+const typeMap = {
+    1: "Water",
+    2: "Fire",
+    3: "Grass",
+    4: "Psychic",
+    5: "Colorless",
+    6: "Fighting",
+    7: "Fairy",
+    8: "Metal",
+    9: "Dragon",
+    10: "Lightning"
+};
+
 // Index page route
 app.get("/", (req, res) => {
     res.render("index")
@@ -331,8 +345,8 @@ app.get('/carddetails/:cardId', (req, res) => {
                    FROM card WHERE card_id=?`;
     connection.query(getcard, [cardId], (err, data) => {
         if (err) throw err;
-        
-        res.render('carddetails', { card: data[0] });
+
+        res.render('carddetails', { card: data[0], rarityMap: rarityMap, expansionsMap: expansionsMap, typeMap: typeMap });
     });
 });
 
