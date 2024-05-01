@@ -216,3 +216,11 @@ body {
   margin-right: 70px;
 
 }
+
+/* Card details CSS */
+
+.card-details-img {
+width: 300px;
+height: auto;
+
+}

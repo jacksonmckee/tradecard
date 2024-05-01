@@ -38,17 +38,18 @@ app.get('/carddata', (req, res)=> {
 
 });
 
-// Individual
+// Individual 
 
-app.get('views/carddetails/:rowid', (req, res) => { 
-    let r_id = req.params.rowid;
+app.get('/carddetails/:cardId', (req, res) => { 
+    let cardId = req.params.cardId;
     let getcard = `SELECT *
-                       FROM card WHERE card_id=?`;
-    connection.query(getcard, [r_id], (err, data) => {  
+                   FROM card WHERE card_id=?`;
+    connection.query(getcard, [cardId], (err, data) => {  
         if(err) throw err;
         res.json({data});
     });
 });
+
 
 // Card URLs //
 

@@ -187,11 +187,6 @@ app.get('/howtoplay', (req, res) => {
     res.render("howtoplay")
 });
 
-// User collection route
-app.get('/usercollection', (req, res) => {
-    res.render("usercollection")
-});
-
 // Cards page route
 app.get('/card', (req, res) => {
     let ep = 'http://localhost:4000/carddata';
@@ -322,11 +317,23 @@ app.get('/cards/collection/3', (req, res) => {
 // View button functionality
 app.post('/viewCollection', (req, res) => {
     const selectedCollection = req.body.collection;
-    
+
     // When a collection is selected, they are taken to the route
     if (selectedCollection) {
         res.redirect(selectedCollection);
-    } 
+    }
+});
+// Individual card details
+
+app.get('/carddetails/:cardId', (req, res) => {
+    let cardId = req.params.cardId;
+    let getcard = `SELECT *
+                   FROM card WHERE card_id=?`;
+    connection.query(getcard, [cardId], (err, data) => {
+        if (err) throw err;
+        
+        res.render('carddetails', { card: data[0] });
+    });
 });
 
 app.listen(PORT, () => {
