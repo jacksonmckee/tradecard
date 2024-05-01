@@ -3,11 +3,13 @@ require('dotenv').config();
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const bodyParser = require('body-parser');
 const path = require("path");
 const mysql = require('mysql2');
 
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
 
 // New port to run
 const PORT = process.env.PORT || 3000;
@@ -45,7 +47,7 @@ const cards = [
     { name: "Pikachu", rarity: "Common", likes: 47 },
     { name: "Lapras", rarity: "Rare Holo", likes: 3 },
     { name: "Moltres", rarity: "Rare Holo", likes: 5 },
-    { name: "Zapdos", rarity: "Rare Holo", likes: 17},
+    { name: "Zapdos", rarity: "Rare Holo", likes: 17 },
     { name: "Gengar", rarity: "Rare", likes: 18 },
     { name: "Hypno", rarity: "Rare", likes: 21 },
     { name: "Raichu", rarity: "Rare Holo", likes: 11 },
@@ -206,12 +208,12 @@ app.get('/card', (req, res) => {
 });
 
 // Base Set Route 
-app.get('/cards/expansion/1', (req, res) => { 
+app.get('/cards/expansion/1', (req, res) => {
     let expansionId = req.params.expansionId;
     let cardsExpansions = `SELECT *
                       FROM card
                       WHERE expansion_id = 1`;
-    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+    connection.query(cardsExpansions, [expansionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -222,12 +224,12 @@ app.get('/cards/expansion/1', (req, res) => {
 });
 
 // Jungle route 
-app.get('/cards/expansion/2', (req, res) => { 
+app.get('/cards/expansion/2', (req, res) => {
     let expansionId = req.params.expansionId;
     let cardsExpansions = `SELECT *
                       FROM card
                       WHERE expansion_id = 2`;
-    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+    connection.query(cardsExpansions, [expansionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -238,12 +240,12 @@ app.get('/cards/expansion/2', (req, res) => {
 });
 
 // Fossil route
-app.get('/cards/expansion/3', (req, res) => { 
+app.get('/cards/expansion/3', (req, res) => {
     let expansionId = req.params.expansionId;
     let cardsExpansions = `SELECT *
                       FROM card
                       WHERE expansion_id = 3`;
-    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+    connection.query(cardsExpansions, [expansionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -254,12 +256,12 @@ app.get('/cards/expansion/3', (req, res) => {
 });
 
 // Base set 2 route
-app.get('/cards/expansion/4', (req, res) => { 
+app.get('/cards/expansion/4', (req, res) => {
     let expansionId = req.params.expansionId;
     let cardsExpansions = `SELECT *
                       FROM card
                       WHERE expansion_id = 4`;
-    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+    connection.query(cardsExpansions, [expansionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -269,13 +271,13 @@ app.get('/cards/expansion/4', (req, res) => {
     });
 });
 
-// Route for collection 1
-app.get('/cards/collection/1', (req, res) => { 
+// User collection 1 route
+app.get('/cards/collection/1', (req, res) => {
     let userCollectionId = req.params.userCollectionId;
     let cardsCollections = `SELECT *
                       FROM card
                       WHERE user_collection_id = 1`;
-    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -286,12 +288,12 @@ app.get('/cards/collection/1', (req, res) => {
 });
 
 // Route for collection 2
-app.get('/cards/collection/2', (req, res) => { 
+app.get('/cards/collection/2', (req, res) => {
     let userCollectionId = req.params.userCollectionId;
     let cardsCollections = `SELECT *
                       FROM card
                       WHERE user_collection_id = 2`;
-    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -302,12 +304,12 @@ app.get('/cards/collection/2', (req, res) => {
 });
 
 // Route for collection 3
-app.get('/cards/collection/3', (req, res) => { 
+app.get('/cards/collection/3', (req, res) => {
     let userCollectionId = req.params.userCollectionId;
     let cardsCollections = `SELECT *
                       FROM card
                       WHERE user_collection_id = 3`;
-    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {
         if (err) {
             console.error('Error fetching card data:', err);
             res.status(500).send('Error fetching card data');
@@ -315,6 +317,16 @@ app.get('/cards/collection/3', (req, res) => {
         }
         res.render('usercollection3', { titletext: 'Aidans Bunch', cardData: data, rarityMap: rarityMap });
     });
+});
+
+// View button functionality
+app.post('/viewCollection', (req, res) => {
+    const selectedCollection = req.body.collection;
+    
+    // When a collection is selected, they are taken to the route
+    if (selectedCollection) {
+        res.redirect(selectedCollection);
+    } 
 });
 
 app.listen(PORT, () => {

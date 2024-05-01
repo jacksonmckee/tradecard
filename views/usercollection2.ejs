@@ -47,7 +47,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/discussion">Discussion Forum</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/card">All Cards</a><span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item dropdown">
@@ -93,58 +93,57 @@
                 <button type="button" class="btn btn-outline-dark">Sort</button>
             </form>
 
-                <form class="form-inline collections-form">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">View Members' Collections</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected disabled>Collections...</option>
-                        <option value="1">John's Collection</option>
-                        <option value="2">Jackson's Pokemon</option>
-                        <option value="3">Aidan's Team</option>
-                    </select>
-                    <button type="button" class="btn btn-outline-dark">View</button>
-                </form>
-                </form>
-                </form>
-            </div>
+            <form class="form-inline collections-form" action="/viewCollection" method="post">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">View Members' Collections</label>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="collection">
+                    <option selected disabled>Collections...</option>
+                    <option value="/cards/collection/1">John's Collection</option>
+                    <option value selected="/cards/collection/2">Jackson's Pokemon</option>
+                    <option value="/cards/collection/3">Aidan's Team</option>
+                </select>
+                <button type="submit" class="btn btn-outline-dark">View</button>
+            </form>
+            
         </div>
-        </div>
+    </div>
+    </div>
 
-        <!-- Container displaying cards -->
+    <!-- Container displaying cards -->
 
-        <div class="container mt-5">
-            <h2>
-                <%= titletext %>
-            </h2>
+    <div class="container mt-5">
+        <h2>
+            <%= titletext %>
+        </h2>
 
-            <h3>Add a card to your wishlist!</h3>
+        <h3>Add a card to your wishlist!</h3>
 
-            <div class="row" id="cardRow">
-                <% cardData.forEach((card)=> { %>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100">
-                            <a href="/carddetails/<%= card.card_id %>">
-                                <img src="<%= card.url_img %>" class="card-img-top" alt="Card Image">
-                            </a>
+        <div class="row" id="cardRow">
+            <% cardData.forEach((card)=> { %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <a href="/carddetails/<%= card.card_id %>">
+                            <img src="<%= card.url_img %>" class="card-img-top" alt="Card Image">
+                        </a>
 
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= card.title %>
-                                </h5>
-                                <% const rarityName=rarityMap[card.rarity_id] || "Unknown" ; %>
-                                    <p class="card-text">
-                                        <%= card.card_name %> - <%= rarityName %>
-                                    </p>
-                                    <p class="card-text">
-                                        <%= card.likes %> Likes
-                                    </p>
-                                    <a class="btn btn-primary" href="/add?card=<%= card.id %>">Add</a>
-                            </div>
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= card.title %>
+                            </h5>
+                            <% const rarityName=rarityMap[card.rarity_id] || "Unknown" ; %>
+                                <p class="card-text">
+                                    <%= card.card_name %> - <%= rarityName %>
+                                </p>
+                                <p class="card-text">
+                                    <%= card.likes %> Likes
+                                </p>
+                                <a class="btn btn-primary" href="/add?card=<%= card.id %>">Add</a>
                         </div>
                     </div>
-                    <% }); %>
-            </div>
-
+                </div>
+                <% }); %>
         </div>
+
+    </div>
 
 
     </div>

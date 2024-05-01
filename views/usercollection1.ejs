@@ -47,7 +47,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/discussion">Discussion Forum</a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/card">All Cards</a><span class="sr-only">(current)</span>
                 </li>
                 <li class="nav-item dropdown">
@@ -93,21 +93,21 @@
                 <button type="button" class="btn btn-outline-dark">Sort</button>
             </form>
 
-                <form class="form-inline collections-form">
-                    <label class="my-1 mr-2" for="inlineFormCustomSelectPref">View Members' Collections</label>
-                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-                        <option selected disabled>Collections...</option>
-                        <option value="1">John's Collection</option>
-                        <option value="2">Jackson's Pokemon</option>
-                        <option value="3">Aidan's Team</option>
-                    </select>
-                    <button type="button" class="btn btn-outline-dark">View</button>
-                </form>
-                </form>
-                </form>
-            </div>
+                
+            <form class="form-inline collections-form" action="/viewCollection" method="post">
+                <label class="my-1 mr-2" for="inlineFormCustomSelectPref">View Members' Collections</label>
+                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="collection">
+                    <option selected disabled>Collections...</option>
+                    <option value selected="/cards/collection/1">John's Collection</option>
+                    <option value="/cards/collection/2">Jackson's Pokemon</option>
+                    <option value="/cards/collection/3">Aidan's Team</option>
+                </select>
+                <button type="submit" class="btn btn-outline-dark">View</button>
+            </form>
+            
         </div>
-        </div>
+    </div>
+    </div>
 
         <!-- Container displaying cards -->
 
