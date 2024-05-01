@@ -221,6 +221,37 @@ app.get('/cards/expansion/1', (req, res) => {
     });
 });
 
+// Jungle route 
+app.get('/cards/expansion/2', (req, res) => { 
+    let expansionId = req.params.expansionId;
+    let cardsExpansions = `SELECT *
+                      FROM card
+                      WHERE expansion_id = 2`;
+    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('jungle', { titletext: 'Jungle Cards', cardData: data, rarityMap: rarityMap });
+    });
+});
+
+// Fossil route
+app.get('/cards/expansion/3', (req, res) => { 
+    let expansionId = req.params.expansionId;
+    let cardsExpansions = `SELECT *
+                      FROM card
+                      WHERE expansion_id = 3`;
+    connection.query(cardsExpansions, [expansionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('fossil', { titletext: 'Fossil Cards', cardData: data, rarityMap: rarityMap });
+    });
+});
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
