@@ -197,7 +197,7 @@ app.get('/card', (req, res) => {
     axios.get(ep)
         .then((response) => {
             let cardData = response.data;
-            res.render('card', { titletext: 'Our Cards', cardData: cardData.data, rarityMap: rarityMap });
+            res.render('card', { titletext: 'Browse Our Cards', cardData: cardData.data, rarityMap: rarityMap });
         })
         .catch((error) => {
             console.error('Error fetching card data:', error);
@@ -266,6 +266,54 @@ app.get('/cards/expansion/4', (req, res) => {
             return;
         }
         res.render('baseset2', { titletext: 'Base Set 2 Cards', cardData: data, rarityMap: rarityMap });
+    });
+});
+
+// Route for collection 1
+app.get('/cards/collection/1', (req, res) => { 
+    let userCollectionId = req.params.userCollectionId;
+    let cardsCollections = `SELECT *
+                      FROM card
+                      WHERE user_collection_id = 1`;
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('usercollection1', { titletext: 'Johns Collection', cardData: data, rarityMap: rarityMap });
+    });
+});
+
+// Route for collection 2
+app.get('/cards/collection/2', (req, res) => { 
+    let userCollectionId = req.params.userCollectionId;
+    let cardsCollections = `SELECT *
+                      FROM card
+                      WHERE user_collection_id = 2`;
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('usercollection2', { titletext: 'Jacksons Pokemon', cardData: data, rarityMap: rarityMap });
+    });
+});
+
+// Route for collection 3
+app.get('/cards/collection/3', (req, res) => { 
+    let userCollectionId = req.params.userCollectionId;
+    let cardsCollections = `SELECT *
+                      FROM card
+                      WHERE user_collection_id = 3`;
+    connection.query(cardsCollections, [userCollectionId], (err, data) => {  
+        if (err) {
+            console.error('Error fetching card data:', err);
+            res.status(500).send('Error fetching card data');
+            return;
+        }
+        res.render('usercollection3', { titletext: 'Aidans Bunch', cardData: data, rarityMap: rarityMap });
     });
 });
 
