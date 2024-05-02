@@ -1,0 +1,353 @@
+﻿-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: May 02, 2024 at 04:13 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.1.25
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `40289157`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card`
+--
+
+CREATE TABLE `card` (
+  `card_id` int(11) NOT NULL,
+  `card_name` varchar(255) NOT NULL,
+  `url_img` varchar(255) NOT NULL,
+  `user_collection_id` int(11) NOT NULL,
+  `illustrator` varchar(255) NOT NULL,
+  `rarity_id` int(11) NOT NULL,
+  `expansion_id` int(11) NOT NULL,
+  `hp` int(11) NOT NULL,
+  `card_type_id` int(11) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `likes` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `card`
+--
+
+INSERT INTO `card` (`card_id`, `card_name`, `url_img`, `user_collection_id`, `illustrator`, `rarity_id`, `expansion_id`, `hp`, `card_type_id`, `description`, `likes`) VALUES
+(1, 'Blastoise', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F2%2Fhigh.webp&w=750&q=100', 1, 'Ken Sugimori', 2, 1, 100, 1, 'A brutal Pokémon with pressurized water jets on its shell. They are used for high-speed tackles.', 31),
+(2, 'Charizard', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F4%2Fhigh.webp&w=384&q=100', 2, 'Mitsuhiro Arita', 1, 1, 120, 2, 'Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.', 29),
+(3, 'Gyarados', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F6%2Fhigh.webp&w=750&q=100', 3, 'Mitsuhiro Arita', 1, 1, 100, 1, 'Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.', 8),
+(4, 'Magneton', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F9%2Fhigh.webp&w=750&q=100', 1, 'Keiji Kinebuchi', 1, 1, 60, 10, 'Formed by several Magnemites linked together. It frequently appears when sunspots flare up.', 13),
+(5, 'Ninetales', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F12%2Fhigh.webp&w=750&q=100', 1, 'Ken Sugimori', 1, 1, 80, 2, 'Very smart and very vengeful. Grabbing one of its many tails could result in a 1,000-year curse.', 15),
+(6, 'Venasaur', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F15%2Fhigh.webp&w=750&q=100', 2, 'Mitsuhiro Arita', 1, 1, 100, 3, 'This plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.', 2),
+(7, 'Dragonair', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F18%2Fhigh.webp&w=750&q=100', 3, 'Mitsuhiro Arita', 2, 1, 80, 5, 'A mystical Pokémon that exudes a gentle aura. Has the ability to change climate conditions.', 12),
+(8, 'Electabuzz', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F20%2Fhigh.webp&w=750&q=100', 1, 'Ken Sugimori', 2, 1, 70, 10, 'Normally found near power plants, it can wander away and cause major blackouts in cities.', 16),
+(9, 'Arcanine', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F23%2Fhigh.webp&w=750&q=100', 2, 'Ken Sugimori', 4, 1, 100, 2, 'A Pokémon that has been long admired for its beauty. It runs gracefully, as if on wings.', 19),
+(10, 'Dewgong', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F25%2Fhigh.webp&w=750&q=100', 1, 'Mitsuhiro Arita', 4, 1, 80, 1, 'Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters.', 0),
+(11, 'Growlithe', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F28%2Fhigh.webp&w=750&q=100', 2, 'Ken Sugimori', 4, 1, 60, 2, 'Very protective of its territory. It will bark and bite to repel intruders from its space.', 17),
+(12, 'Pikachu', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase1%2F58%2Fhigh.webp&w=750&q=100', 1, 'Mitsuhiro Arita', 3, 1, 40, 10, 'When several of these Pokémon gather, their electricity can cause lightning storms.', 47),
+(13, 'Lapras', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F10%2Fhigh.webp&w=2048&q=100', 1, 'Ken Sugimori', 1, 3, 80, 1, 'A Pokémon that has been overhunted almost to extinction. It can ferry people across water.', 3),
+(14, 'Moltres', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F12%2Fhigh.webp&w=750&q=100', 2, 'Mitsuhiro Arita', 1, 3, 70, 2, 'Known as the legendary bird of fire. Every flap of its wings creates a dazzling flash of flames.', 5),
+(15, 'Zapdos', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F15%2Fhigh.webp&w=2048&q=100', 3, 'Mitsuhiro Arita', 1, 3, 80, 10, 'A legendary thunderbird Pokémon whose anger is said to cause storms. Some say it has lived above the clouds for thousands of years.', 17),
+(16, 'Gengar', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F20%2Fhigh.webp&w=750&q=100', 1, 'Keiji Kinebuchi', 2, 3, 80, 4, 'Under a full moon, this Pokémon likes to mimic the shadows of people and laugh at their fright.', 18),
+(17, 'Hypno', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F23%2Fhigh.webp&w=2048&q=100', 2, 'Ken Sugimori', 2, 3, 90, 4, 'When it locks eyes with an enemy, it will use a mix of psi moves such as Hypnosis and Confusion.', 21),
+(18, 'Raichu', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F29%2Fhigh.webp&w=2048&q=100', 3, 'Mitsuhiro Arita', 1, 3, 90, 10, 'Its long tail serves as a ground to protect itself from its own high voltage power.', 11),
+(19, 'Arbok', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F31%2Fhigh.webp&w=2048&q=100', 1, 'Ken Sugimori', 4, 3, 60, 3, 'It is rumored that the ferocious warning markings on its belly differ from area to area.', 7),
+(20, 'Omanyte', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase3%2F52%2Fhigh.webp&w=2048&q=100', 1, 'Kagemaru Himeno', 3, 3, 40, 1, 'Although long extinct, in rare cases, it can be genetically resurrected from fossils.', 21),
+(21, 'Flareon', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F3%2Fhigh.webp&w=2048&q=100', 3, 'Kagemaru Himeno', 1, 2, 70, 2, 'When storing thermal energy in its body, its temperature could soar to over 1600 degrees.', 12),
+(22, 'Mr. Mime', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F6%2Fhigh.webp&w=2048&q=100', 2, 'Ken Sugimori', 1, 2, 40, 4, 'If interrupted while miming, it will slap around the enemy with its broad hands.', 2),
+(23, 'Pinsir', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F9%2Fhigh.webp&w=2048&q=100', 1, 'Kagemaru Himeno', 1, 2, 60, 3, 'If it fails to crush the victim in its pincers, it will swing its victim around and toss it hard.', 20),
+(24, 'Wigglytuff', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F16%2Fhigh.webp&w=2048&q=100', 1, 'Mitsuhiro Arita', 1, 2, 80, 5, 'The body is soft and rubbery. When angered, it will suck in air and inflate itself to an enormous size.', 16),
+(25, 'Jolteon', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F20%2Fhigh.webp&w=2048&q=100', 2, 'Kagemaru Himeno', 2, 2, 70, 10, 'It accumulates negative ions from the atmosphere to blast out 10,000-volt lightning bolts.', 4),
+(26, 'Pidgeot', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F24%2Fhigh.webp&w=2048&q=100', 1, 'Kagemaru Himeno', 1, 2, 80, 5, 'When hunting, it skins the surface of water at high speed to pick off unwary prey such as Magikarp.', 1),
+(27, 'Venomoth', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F29%2Fhigh.webp&w=2048&q=100', 2, 'Ken Sugimori', 1, 2, 70, 3, 'The dust-like scales covering its wings are color-coded to indicate the kinds of poison it has.', 2),
+(28, 'Victrabeel', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F30%2Fhigh.webp&w=2048&q=100', 1, 'Ken Sugimori', 1, 2, 80, 3, 'Said to live in huge colonies deep in jungles, although no one has ever returned from there.', 14),
+(29, 'Primeape', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F43%2Fhigh.webp&w=2048&q=100', 2, 'Kagemaru Himeno', 4, 2, 70, 6, 'Always furious and tenacious to boot. It will not abandon chasing its quarry until its quarry is caught.', 20),
+(30, 'Rhyhorn', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase2%2F61%2Fhigh.webp&w=2048&q=100', 3, 'Mitsuhiro Arita', 3, 2, 70, 6, 'Its massive bones are 1,000 times harder than human bones. It can easily knock a trailer flying.', 15),
+(31, 'Chansey', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F3%2Fhigh.webp&w=2048&q=100', 2, 'Ken Sugimori', 1, 4, 120, 5, 'A rare and elusive Pokémon that is said to bring happiness to those who manage to catch it.', 1),
+(32, 'Hitmonchan', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F8%2Fhigh.webp&w=2048&q=100', 3, 'Ken Sugimori', 1, 4, 70, 6, 'The spirit of a pro boxer has infused this Pokémon. It throws punches that are faster than a bullet train.', 17),
+(33, 'Nidoking', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F11%2Fhigh.webp&w=2048&q=100', 1, 'Ken Sugimori', 1, 4, 90, 3, 'Uses its powerful tail in battle to smash, constrict, then break its prey\'s bones.', 10),
+(34, 'Poliwrath', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F15%2Fhigh.webp&w=2048&q=100', 3, 'Ken Sugimori', 1, 4, 90, 1, 'An adept swimmer at both the front crawl and breaststroke. Easily overtakes the best human swimmers.', 13),
+(35, 'Beedrill', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F21%2Fhigh.webp&w=2048&q=100', 3, 'Ken Sugimori', 2, 4, 80, 3, 'Flies at high speed and attacks using the large, venomous stingers on its forelegs and tail.', 12),
+(36, 'Dugtrio', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F23%2Fhigh.webp&w=2048&q=100', 2, 'Keiji Kinebuchi', 2, 4, 70, 6, 'A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.', 0),
+(37, 'Kangaskhan', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F26%2Fhigh.webp&w=2048&q=100', 1, 'Mitsuhiro Arita', 2, 4, 90, 5, 'The infant rarely ventures out of its mother\\\'s protective pouch until it is three years old.', 5),
+(38, 'Seaking', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F60%2Fhigh.webp&w=2048&q=100', 1, 'Kagemaru Himeno', 4, 4, 70, 1, 'In the autumn spawning season, they can be seen swimming powerfully up rivers and creeks.', 9),
+(40, 'Caterpie', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F68%2Fhigh.webp&w=2048&q=100', 3, 'Ken Sugimori', 3, 4, 40, 3, 'It is covered with a green skin. When it grows, it sheds the skin, covers itself with silk, and becomes a cocoon.', 4),
+(41, 'Rattata', 'https://www.tcgdex.net/_next/image?url=https%3A%2F%2Fassets.tcgdex.net%2Fen%2Fbase%2Fbase4%2F89%2Fhigh.webp&w=2048&q=100', 2, 'Mitsuhiro Arita', 3, 4, 30, 5, 'Bites anything when it attacks. Small and very quick, it is a common sight in many places.', 7);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card_type`
+--
+
+CREATE TABLE `card_type` (
+  `card_type_id` int(11) NOT NULL,
+  `card_type_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `card_type`
+--
+
+INSERT INTO `card_type` (`card_type_id`, `card_type_name`) VALUES
+(1, 'Water'),
+(2, 'Fire'),
+(3, 'Grass'),
+(4, 'Psychic'),
+(5, 'Colorless'),
+(6, 'Fighting'),
+(7, 'Fairy'),
+(8, 'Metal'),
+(9, 'Dragon'),
+(10, 'Lightning');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `discussion`
+--
+
+CREATE TABLE `discussion` (
+  `discussion_id` int(11) NOT NULL,
+  `discussion_title` varchar(255) NOT NULL,
+  `discussion_content` varchar(255) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `discussion_reply` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `discussion`
+--
+
+INSERT INTO `discussion` (`discussion_id`, `discussion_title`, `discussion_content`, `user_id`, `discussion_reply`) VALUES
+(1, 'Let\'s talk about our favourite expansion!', 'I would have to say that my favourite expansion from the website is Base Set, what is yours?', 1, NULL),
+(2, 'I\'d love to know yours guys\' favourite card?', 'Mine would have to be Pikachu, so iconic. What is yours?', 2, NULL),
+(3, 'When did you start playing TCG?', 'I have been playing since I was a kid and have always loved it, what about you?', 3, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expansion`
+--
+
+CREATE TABLE `expansion` (
+  `expansion_id` int(11) NOT NULL,
+  `expansion_name` varchar(255) NOT NULL,
+  `release_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `expansion`
+--
+
+INSERT INTO `expansion` (`expansion_id`, `expansion_name`, `release_date`) VALUES
+(1, 'Base Set', '1999-01-09'),
+(2, 'Jungle', '1999-06-16'),
+(3, 'Fossil', '1999-10-10'),
+(4, 'Base Set 2', '2000-02-24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `rarity`
+--
+
+CREATE TABLE `rarity` (
+  `rarity_id` int(11) NOT NULL,
+  `rarity_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `rarity`
+--
+
+INSERT INTO `rarity` (`rarity_id`, `rarity_name`) VALUES
+(1, 'Rare Holo'),
+(2, 'Rare'),
+(3, 'Common'),
+(4, 'Uncommon');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `email`, `password`) VALUES
+(1, 'John Busch', 'jb@example.com', 'pokemon'),
+(2, 'Jackson Mckee', 'jm@example.com', 'password1'),
+(3, 'Aidan McGowan', 'am@example.com', 'pokemonprogramming'),
+(4, 'Leo Galway', 'lg@example.com', 'ilovebits'),
+(5, 'Neil Anderson', 'an@example.com', 'databases'),
+(6, 'Chris Smith', 'cs@example.com', 'msccourse');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_collection`
+--
+
+CREATE TABLE `user_collection` (
+  `user_collection_id` int(11) NOT NULL,
+  `user_collection_name` varchar(255) DEFAULT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user_collection`
+--
+
+INSERT INTO `user_collection` (`user_collection_id`, `user_collection_name`, `user_id`) VALUES
+(1, 'Johns Cards', 1),
+(2, 'Jacksons Team', 2),
+(3, 'Aidans Bunch', 3),
+(4, NULL, 4),
+(5, NULL, 5),
+(6, NULL, 6);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `card`
+--
+ALTER TABLE `card`
+  ADD PRIMARY KEY (`card_id`),
+  ADD KEY `rarity_id_to_rarity_id` (`rarity_id`),
+  ADD KEY `card_type_id_to_card_type_id` (`card_type_id`),
+  ADD KEY `expansion_id_to_expansion_id` (`expansion_id`),
+  ADD KEY `user_collection_id_to_user_collection_id` (`user_collection_id`);
+
+--
+-- Indexes for table `card_type`
+--
+ALTER TABLE `card_type`
+  ADD PRIMARY KEY (`card_type_id`);
+
+--
+-- Indexes for table `discussion`
+--
+ALTER TABLE `discussion`
+  ADD PRIMARY KEY (`discussion_id`),
+  ADD KEY `user_id_to_user_id` (`user_id`);
+
+--
+-- Indexes for table `expansion`
+--
+ALTER TABLE `expansion`
+  ADD PRIMARY KEY (`expansion_id`);
+
+--
+-- Indexes for table `rarity`
+--
+ALTER TABLE `rarity`
+  ADD PRIMARY KEY (`rarity_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `user_collection`
+--
+ALTER TABLE `user_collection`
+  ADD PRIMARY KEY (`user_collection_id`),
+  ADD KEY `user_id_to_user_id` (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `card`
+--
+ALTER TABLE `card`
+  MODIFY `card_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `card_type`
+--
+ALTER TABLE `card_type`
+  MODIFY `card_type_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `discussion`
+--
+ALTER TABLE `discussion`
+  MODIFY `discussion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `expansion`
+--
+ALTER TABLE `expansion`
+  MODIFY `expansion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `rarity`
+--
+ALTER TABLE `rarity`
+  MODIFY `rarity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user_collection`
+--
+ALTER TABLE `user_collection`
+  MODIFY `user_collection_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `card`
+--
+ALTER TABLE `card`
+  ADD CONSTRAINT `card_type_id_to_card_type_id` FOREIGN KEY (`card_type_id`) REFERENCES `card_type` (`card_type_id`),
+  ADD CONSTRAINT `expansion_id_to_expansion_id` FOREIGN KEY (`expansion_id`) REFERENCES `expansion` (`expansion_id`),
+  ADD CONSTRAINT `rarity_id_to_rarity_id` FOREIGN KEY (`rarity_id`) REFERENCES `rarity` (`rarity_id`),
+  ADD CONSTRAINT `user_collection_id_to_user_collection_id` FOREIGN KEY (`user_collection_id`) REFERENCES `user_collection` (`user_collection_id`);
+
+--
+-- Constraints for table `discussion`
+--
+ALTER TABLE `discussion`
+  ADD CONSTRAINT `user_id_to_user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

@@ -106,6 +106,13 @@ const typeMap = {
     10: "Lightning"
 };
 
+// Users mapping
+const usersMap = {
+    1: "John Busch",
+    2: "Jackson Mckee",
+    3: "Aidan McGowan"
+};
+
 // Index page route
 app.get("/", (req, res) => {
     res.render("index")
@@ -193,6 +200,10 @@ app.post('/signin', (req, res) => {
 
 // Discussion route
 app.get('/discussion', (req, res) => {
+
+
+
+
     res.render("discussion")
 });
 

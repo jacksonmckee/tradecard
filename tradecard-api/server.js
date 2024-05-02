@@ -103,6 +103,19 @@ app.get('/cards/userCollection/:userCollectionId', (req, res)=> {
     });
 });
 
+// All discussion //
+
+app.get('/discussions', (req, res)=> { 
+
+    let alldiscussions = `SELECT *
+                       FROM discussion`;
+    connection.query(alldiscussions, (err, data) => {  
+        if(err) throw err;
+        res.json({data});
+    });
+
+});
+
 const server = app.listen(PORT, () => {
     console.log(`API started on port ${server.address().port}`);
 });
