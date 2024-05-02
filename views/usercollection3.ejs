@@ -100,51 +100,45 @@
                 </select>
                 <button type="submit" class="btn btn-outline-dark">View</button>
             </form>
-            
+
         </div>
     </div>
-    </div>
-                
 
-        <!-- Container displaying cards -->
 
-        <div class="container mt-5">
-            <h2>
-                <%= titletext %>
-            </h2>
+    <!-- Container displaying cards -->
 
-            <h3>Add a card to your wishlist!</h3>
+    <div class="container mt-5">
+        <h2>
+            <%= titletext %>
+        </h2>
 
-            <div class="row" id="cardRow">
-                <% cardData.forEach((card)=> { %>
-                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100">
-                            <a href="/carddetails/<%= card.card_id %>">
-                                <img src="<%= card.url_img %>" class="card-img-top" alt="Card Image">
-                            </a>
+        <h3>Add a card to your wishlist!</h3>
 
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <%= card.title %>
-                                </h5>
-                                <% const rarityName=rarityMap[card.rarity_id] || "Unknown" ; %>
-                                    <p class="card-text">
-                                        <%= card.card_name %> - <%= rarityName %>
-                                    </p>
-                                    <p class="card-text">
-                                        <%= card.likes %> Likes
-                                    </p>
-                                    <a class="btn btn-primary" href="/add?card=<%= card.id %>">Add</a>
-                            </div>
+        <div class="row" id="cardRow">
+            <% cardData.forEach((card)=> { %>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <a href="/carddetails/<%= card.card_id %>">
+                            <img src="<%= card.url_img %>" class="card-img-top" alt="Card Image">
+                        </a>
+
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= card.title %>
+                            </h5>
+                            <% const rarityName=rarityMap[card.rarity_id] || "Unknown" ; %>
+                                <p class="card-text">
+                                    <%= card.card_name %> - <%= rarityName %>
+                                </p>
+                                <p class="card-text">
+                                    <%= card.likes %> Likes
+                                </p>
+                                <a class="btn btn-primary" href="/add?card=<%= card.id %>">Add</a>
                         </div>
                     </div>
-                    <% }); %>
-            </div>
-
+                </div>
+                <% }); %>
         </div>
-
-
-    </div>
 
     </div>
 
@@ -160,7 +154,6 @@
 
             <p class="card-text text-white">© Copyright 2024 Jackson Mckee</p>
         </div>
-    </div>
     </div>
 
 </body>
